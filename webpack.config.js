@@ -1,25 +1,33 @@
-var webpack = require('webpack');
-var path = require('path');
+var webpack = require("webpack");
+var path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-	entry: path.resolve(__dirname, 'src/index.js'),
-	output: {
-		filename: 'bundle.js',
-		path: path.resolve(__dirname, 'public'),
-		publicPath: '/static/'
-	},
-	module: {
-		rules: [{
-			test: /\.js?/i,
-			loader: 'babel-loader',
-			options: {
-				presets: [
-					'es2015'
-				],
-				plugins: [
-					['transform-react-jsx', { pragma: 'h' }]
-				]
-			}
-		}]
-	}
-}
+  mode: "development",
+  entry: path.resolve(__dirname, "src/index.js"),
+  output: {
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "public"),
+    publicPath: "/static/",
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./index.html",
+    }),
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "babel-loader",
+        options: {
+          presets: [
+            "@babel/preset-env",
+            ["@babel/preset-react", { pragma: "h", pragmaFrag: "Fragment" }],
+          ],
+        },
+      },
+    ],
+  },
+};

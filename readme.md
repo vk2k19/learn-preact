@@ -1,23 +1,26 @@
 # lEarn-Preact
+
 Laying hands on Preact to understand what it provides
 
 ## Setup
-	Following /setup.md will help you in getting up and running from scratch
 
-At the time of development follwoing was the version of dependencies:
+    Following /setup.md will help you in getting up and running from scratch
 
-babel-core: ^6.26.0
-babel-loader: ^7.1.2
-babel-plugin-transform-object-rest-spread: ^6.26.0
-babel-plugin-transform-react-jsx: ^6.24.1
-babel-preset-env: ^1.6.0
-babel-preset-es2015: ^6.24.1
-preact: ^8.2.4
-webpack-dev-server: ^2.7.1
-webpack: ^3.5.5
+At the time of development following was the version of dependencies:
 
+"preact": "^10.26.9"
+"@babel/core": "^7.28.0",
+"@babel/preset-env": "^7.28.0",
+"@babel/preset-react": "^7.27.1",
+"@prefresh/webpack": "^4.0.3",
+"babel-loader": "^10.0.0",
+"html-webpack-plugin": "^5.6.3",
+"webpack": "^5.100.2",
+"webpack-cli": "^6.0.1",
+"webpack-dev-server": "^5.2.2"
 
 ## first step with preact
+
 Open src/index.js
 clean all content and import h, render and Component from preact
 
@@ -26,4 +29,5 @@ create an App class with render expecting prop greetingsTo and utilize it to ret
 finally call render with params App with prop greetingsTo and document.body or any root where it is to be added.
 
 ## Next
+
 Type of components
